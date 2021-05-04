@@ -1,13 +1,15 @@
 package com.chriscorp.crud.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
+@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -26,8 +28,8 @@ public class User implements Serializable {
     private int edad;
 
     @Column(name = "fecha_nacimiento")
-    @JsonFormat(pattern="yyyy-MM-dd")
-    private Date fecha;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+    private LocalDate fecha;
 
     @Column(name = "email")
     private String email;
