@@ -1,7 +1,6 @@
 package com.chriscorp.crud.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,7 +8,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
-@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User implements Serializable {

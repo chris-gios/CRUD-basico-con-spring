@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<User>> getUserById(@PathVariable(name = "id") long id) throws Exception{
+    public ResponseEntity<Optional<User>> getUserById(@PathVariable(name = "id") long id) {
         Optional<User> user = userService.getUserById(id);
         if(user.isPresent()) {
             return new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteUserById(@PathVariable(name = "id")  long id) throws Exception{
+    public ResponseEntity<Object> deleteUserById(@PathVariable(name = "id")  long id) {
         Optional<User> user = userService.getUserById(id);
         if(user.isPresent()) {
             userService.deleteUserById(id);
